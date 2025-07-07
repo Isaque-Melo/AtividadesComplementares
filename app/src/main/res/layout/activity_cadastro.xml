@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="393dp"
+        android:layout_height="83dp"
+        android:layout_marginBottom="24dp"
+        android:background="#FFFFFF"
+        android:text="Cadastro de Atividade"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="387dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="4dp"
+        android:text="Título"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edt_titulo"
+        android:layout_width="379dp"
+        android:layout_height="95dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Digite o título" />
+
+    <TextView
+        android:layout_width="395dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="4dp"
+        android:text="Descrição"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edt_descricao"
+        android:layout_width="393dp"
+        android:layout_height="109dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Digite a descrição" />
+
+    <TextView
+        android:layout_width="387dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="4dp"
+        android:text="Categoria (A, B ou C)"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spinner_categoria"
+        android:layout_width="377dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_salvar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginBottom="16dp"
+        android:text="Salvar Atividade" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>
