@@ -11,7 +11,8 @@ import com.example.atividadescomplementares.Atividade
 
 class AtividadesAdapter(
     private val atividades: MutableList<Atividade>,
-    private val onStatusChanged: (Int, Boolean) -> Unit
+    private val onStatusChanged: (Int, Boolean) -> Unit,
+    private val onItemClicked: (position: Int) -> Unit
 ) : RecyclerView.Adapter<AtividadesAdapter.AtividadeViewHolder>() {
 
     inner class AtividadeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -20,6 +21,15 @@ class AtividadesAdapter(
         val categoria: TextView = itemView.findViewById(R.id.tv_categoria)
         val status: CheckBox = itemView.findViewById(R.id.cb_realizada)
         val tv_status: TextView = itemView.findViewById(R.id.tv_status)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onItemClicked(position)
+                }
+            }
+        }
 
         fun bind(atividade: Atividade) {
             titulo.text = atividade.titulo
@@ -33,6 +43,7 @@ class AtividadesAdapter(
                 onStatusChanged(adapterPosition, isChecked)
                 tv_status.visibility = if (atividade.status) View.GONE else View.VISIBLE
             }
+
         }
     }
 

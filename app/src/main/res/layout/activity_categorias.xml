@@ -14,6 +14,7 @@
         android:orientation="vertical">
 
         <!-- Toolbar -->
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -22,8 +23,15 @@
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
         <!-- RecyclerView para categorias -->
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_view"
+            android:queryHint="Pesquisar categoria"
+            android:iconifiedByDefault="false"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_categorias"
             android:layout_width="match_parent"
